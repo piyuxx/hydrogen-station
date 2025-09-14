@@ -18,7 +18,7 @@ const components: ComponentStep[] = [
 
 function Step({ step }: { step: ComponentStep }) {
   return (
-    <div className="flex flex-col items-center text-center min-w-[120px]">
+    <div className="flex flex-col items-center text-center md::min-w-[126px]">
       {/* Step Number */}
       <div className="w-7 h-7 flex bg-[#4A4A4A] items-center justify-center rounded-full text-white text-sm font-semibold mb-4">
         {step.id}

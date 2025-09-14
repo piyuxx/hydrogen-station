@@ -36,7 +36,7 @@ export default function Gallery() {
         if (window.innerWidth >= 1280) {
           setSlidesPerView(4)
         } else if (window.innerWidth >= 768) {
-          setSlidesPerView(3) // Fixed: was 2, should be 3 for tablet
+          setSlidesPerView(2)
         } else {
           setSlidesPerView(1)
         }
@@ -51,13 +51,8 @@ export default function Gallery() {
 
   // Function to check if this is the last visible slide
   const isLastVisibleSlide = (index: number) => {
-    // Only show gradient when there are more slides available after current view
-    const totalSlides = galleryImages.length
     const lastVisibleIndex = currentSlide + slidesPerView - 1
-    const hasMoreSlides = (currentSlide + slidesPerView) < totalSlides
-    
-    // Show gradient only on the actual last visible slide and only when there are more slides
-    return hasMoreSlides && index === (lastVisibleIndex % totalSlides)
+    return index === lastVisibleIndex || (index === lastVisibleIndex % galleryImages.length)
   }
 
   return (
@@ -80,7 +75,7 @@ export default function Gallery() {
                   className="w-full h-full object-cover"
                 />
                 
-                {/* Gradient overlay on last visible image only when more slides exist */}
+                {/* Gradient overlay on last visible image */}
                 {isLastVisibleSlide(i) && (
                   <div 
                     className="absolute inset-0 pointer-events-none"
@@ -93,10 +88,10 @@ export default function Gallery() {
             ))}
           </div>
 
-          {/* Right Button - positioned better */}
+          {/* Right Button */}
           <button
             onClick={() => slider.current?.next()}
-            className="absolute top-1/2 right-4 lg:right-8 xl:right-12 -translate-y-1/2 w-8 h-8 lg:w-14 lg:h-14 xl:w-16 xl:h-16 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-10"
+            className="absolute top-1/2 right-30 -translate-y-1/2 w-8 h-8 lg:w-14 lg:h-14 xl:w-16 xl:h-16 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
           >
             <ArrowRight className="w-4 h-4 lg:w-7 lg:h-7 xl:w-8 xl:h-8 text-black" />
           </button>
