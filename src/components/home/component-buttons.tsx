@@ -5,7 +5,8 @@ type ComponentButton = {
   title: string
   icon: string
   description?: string
-  image?: string
+  image?: string,
+  class?: string
 }
 
 const componentButtons: ComponentButton[] = [
@@ -27,6 +28,7 @@ const componentButtons: ComponentButton[] = [
     id: 3, 
     title: "High Pressure Buffer", 
     icon: "/assets/svg/ic_pressure_buffer.svg",
+    class: "lg:mb-11",
     description: "The fixed tanks have an internal volume of 932 liters which at 500bar corresponds to an overall capacity of 30kg. The material typically used for tanks used for stationary usage is typically steel as per ISO 683-2.",
     image: "/assets/img/ic_accordion_img_3.png"
   },
@@ -41,6 +43,7 @@ const componentButtons: ComponentButton[] = [
     id: 5, 
     title: "Dispenser", 
     icon: "/assets/svg/ic_dispenser.svg",
+    class: "lg:mb-13",
     description: "Hydrogen will be delivered to the boats through a single dispenser equipped with one nozzle and a data interface, mounted on a 5- or 10-meter hose. The fueling process will utilize a nozzle with a communications protocol, operating at a rate of 60 g/s or 120 g/s and the standard SJ 2601 will be considered as a reference for the definition of the fueling procedure (pressure ramp rate). A breakaway system will be in place to immediately stop the flow in case of nozzle",
     image: "/assets/img/ic_accordion_img_5.png",
   },
@@ -77,17 +80,17 @@ export default function ComponentButtonsGrid() {
                   </div>
                 </AccordionTrigger>
                 
-                <AccordionContent className="bg-[#F6F6F6]">
-                  <div className="px-4 md:px-6 lg:px-7 xl:px-9 pt-4 md:pt-5 lg:pt-[22px] pb-4 md:pb-5 lg:pb-6">
-                    <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-4 md:mb-5 lg:mb-[22px]">
+                <AccordionContent className="bg-[#F6F6F6] h-[550px] md:h-[650px] lg:h-[700px]">
+                  <div className="px-4 md:px-6 lg:px-7 xl:px-9 pt-4 md:pt-5 lg:pt-[22px] pb-4 md:pb-5 lg:pb-6 h-full flex flex-col">
+                    <p className={`text-sm md:text-base text-gray-600 leading-relaxed mb-4 md:mb-5  ${item.class}`}>
                       {item.description}
                     </p>
                     
-                    <div className="flex justify-center">
+                    <div className="flex justify-center items-center flex-1">
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full max-w-[400px] md:max-w-[450px] lg:max-w-[497px] h-auto object-cover rounded-lg"
+                        className="w-full max-w-[400px] md:max-w-[497px] max-h-full object-contain rounded-lg"
                       />
                     </div>
                   </div>

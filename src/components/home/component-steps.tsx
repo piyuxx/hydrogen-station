@@ -4,38 +4,44 @@ type ComponentStep = {
   id: number
   title: string
   icon: string
+  size: string
 }
 
 const components: ComponentStep[] = [
-  { id: 1, title: "Tube Trailer", icon: "/assets/svg/ic_tube_trailer.svg" },
-  { id: 2, title: "Compressor", icon: "/assets/svg/ic_compressor.svg" },
-  { id: 3, title: "High Pressure Buffer", icon: "/assets/svg/ic_pressure_buffer.svg" },
-  { id: 4, title: "Chiller", icon: "/assets/svg/ic_chiller.svg" },
-  { id: 5, title: "Dispenser", icon: "/assets/svg/ic_dispenser.svg" },
-  { id: 6, title: "Safety Block", icon: "/assets/svg/ic_safety_block.svg" },
+ { id: 1, title: "Tube Trailer", icon: "/assets/svg/ic_tube_trailer.svg" ,size:"min-h-[62px] min-w-[97px]" },
+  { id: 2, title: "Compressor", icon: "/assets/svg/ic_compressor.svg", size:"min-h-[57px] min-w-[58px]"},
+  { id: 3, title: "High Pressure Buffer", icon: "/assets/svg/ic_pressure_buffer.svg", size:"min-h-[57px] min-w-[58px]" },
+  { id: 4, title: "Chiller", icon: "/assets/svg/ic_chiller.svg",size:"min-h-[57px] min-w-[58px]" },
+  { id: 5, title: "Dispenser", icon: "/assets/svg/ic_dispenser.svg", size:"min-h-[57px] min-w-[58px]"},
+  { id: 6, title: "Safety Block", icon: "/assets/svg/ic_safety_block.svg", size:"min-h-[58px] min-w-[58px]" },
 ]
 
 function Step({ step }: { step: ComponentStep }) {
   return (
-    <div className="flex flex-col items-center text-center">
+    <div className="flex flex-col items-center text-center min-w-[120px]">
+      {/* Step Number */}
       <div className="w-7 h-7 flex bg-[#4A4A4A] items-center justify-center rounded-full text-white text-sm font-semibold mb-4">
         {step.id}
       </div>
-      <div className="flex flex-col items-center justify-center p-2.5">
-        <div className="w-14 h-14 flex items-center justify-center mb-2">
-          <img
-            src={step.icon}
-            alt={step.title}
-            className="w-full h-full object-contain"
-          />
-        </div>
-        <p className="text-base font-medium text-center leading-tight">
-          {step.title}
-        </p>
+
+      {/* Icon */}
+      <div className={`flex items-center justify-center mb-2 ${step.size}`}>
+        <img
+          src={step.icon}
+          alt={step.title}
+          className="w-full h-full object-contain text-[#4A4A4A]"
+        />
       </div>
+
+      {/* Label (FIX: force it to only grow downward) */}
+      <p className="text-sm font-medium text-center leading-tight min-h-[40px]">
+        {step.title}
+      </p>
     </div>
   )
 }
+
+
 
 export default function ComponentsDiagram() {
   return (
@@ -71,7 +77,7 @@ export default function ComponentsDiagram() {
 
         {/* Arrow down */}
         <div className="flex justify-end w-full mb-4 md:mb-6">
-          <div className="flex justify-center" style={{ width: "calc(33.33% - 12px)" }}>
+          <div className="flex justify-center" style={{ width: "calc(33.33% - 15px)" }}>
             <MoveDown className="text-gray-400 w-4 h-4 md:w-6 md:h-6" />
           </div>
         </div>
