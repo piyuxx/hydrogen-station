@@ -10,7 +10,6 @@ import StationVideo from "@/components/home/hydrogen-view"
 import Gallery from "@/components/home/image-gallery"
 import RefuellingStation from "@/components/home/refuel-station"
 import SustainabilitySection from "@/components/home/sustainability-section"
-import TechSearch from "@/components/home/tech-search"
 
 const Home = () => {
   return (
@@ -23,7 +22,6 @@ const Home = () => {
       <DevelopmentSection />
       <ComponentsDiagram /> 
        <ComponentButtonsGrid />
-       <TechSearch />
        <HydrogenSteps />
        <StationVideo />
       <Gallery />

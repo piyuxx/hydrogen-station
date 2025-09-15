@@ -32,7 +32,7 @@ export default function SustainabilitySection() {
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           >
             <Button
-              className="cursor-pointer h-12.5 bg-white px-4 py-2 md:px-6 md:py-3 rounded-full text-sm md:text-base font-medium shadow-lg hover:bg-gray-50 text-[#2E2E2E] transition-colors"
+              className="cursor-pointer h-12.5 bg-white px-4 py-2 md:px-6 md:py-3 rounded-full text-sm md:text-base font-medium shadow-lg hover:bg-white text-[#2E2E2E]"
             >
               Open Map
             </Button>
