@@ -6,7 +6,7 @@ const RefuellingStation = () => {
       </h2>
 
       {/* Subtitle */}
-      <p className="text-[13px] md:text-base w-full md:max-w-294 mb-10 md:mb-16.25">
+      <p className="text-[13px] md:text-base w-full font-normal md:max-w-294 mb-10 md:mb-16.25">
         The refueling station has been designed and engineered to meet the highest
         safety standards while also balancing technical requirements with the
         aesthetic and design requirements of the surrounding environment.

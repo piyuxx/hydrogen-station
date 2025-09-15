@@ -140,7 +140,7 @@ export default function HydrogenSection() {
                     </div>
 
                     {/* Label (fixed height for all) */}
-                    <p className="text-[8px] font-medium text-gray-700 leading-tight min-h-[24px] flex items-center justify-center">
+                    <p className="text-[8px] font-medium  leading-tight min-h-[24px] flex items-center justify-center">
                       {step.title}
                     </p>
                   </div>

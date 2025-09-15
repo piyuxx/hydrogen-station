@@ -58,7 +58,7 @@ export default function Gallery() {
   return (
     <section className="bg-black text-white py-10 xl:py-16 pl-6 lg:pl-20 xl:pl-[136px] pr-6 lg:pr-0">
       <div className="flex flex-col w-full gap-6 xl:gap-12">
-        <h2 className="text-xl lg:text-[32px] xl:text-[40px] font-semibold leading-tight text-start w-full">
+        <h2 className="text-xl md:text-[54px] md:font-medium leading-tight text-start w-full">
           Our Gallery
         </h2>
 

@@ -34,7 +34,7 @@ function Step({ step }: { step: ComponentStep }) {
       </div>
 
       {/* Label (FIX: force it to only grow downward) */}
-      <p className="text-sm font-medium text-center leading-tight min-h-[40px]">
+      <p className="text-sm md:text-base font-medium text-center leading-tight min-h-[40px]">
         {step.title}
       </p>
     </div>
@@ -46,7 +46,7 @@ function Step({ step }: { step: ComponentStep }) {
 export default function ComponentsDiagram() {
   return (
     <div className="flex flex-col items-center py-8 px-32.5 max-w-full">
-      <h2 className="text-[22px] font-medium mb-12 text-center">
+      <h2 className="text-[26px] font-medium mb-12 text-center">
         Components Diagram
       </h2>
 

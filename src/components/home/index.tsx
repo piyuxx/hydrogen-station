@@ -86,7 +86,7 @@ const HeroSection = () => {
                 )}
               </div>
               {item?.subLabel && (
-                <span className="text-[11px] font-medium">{item.subLabel}</span>
+                <span className="text-[14px] font-medium">{item.subLabel}</span>
               )}
             </Card>
           ))}

@@ -59,13 +59,13 @@ const componentButtons: ComponentButton[] = [
 export default function ComponentButtonsGrid() {
   return (
     <section className="flex justify-center px-6 md:px-8 lg:px-16 xl:px-32">
-      <div className="w-full py-6 md:py-8 lg:py-12 max-w-[1440px] grid gap-3 md:gap-4 lg:gap-6 xl:gap-8 
+      <div className="w-full py-6 md:py-8 lg:py-12 max-w-360 grid gap-3 md:gap-4 lg:gap-6 xl:gap-8 
         grid-cols-1 lg:grid-cols-2">
         
         {componentButtons.map((item) => (
           <Accordion key={item.id} type="single" collapsible>
             <AccordionItem value={`item-${item.id}`} className="border-none">
-              <div className="bg-[#F6F6F6] rounded-[12px] md:rounded-[15px] lg:rounded-[20px] overflow-hidden">
+              <div className="bg-[#F6F6F6] rounded-3 md:rounded-[15px] lg:rounded-5 overflow-hidden">
                 <AccordionTrigger className="flex items-center justify-between h-[70px] md:h-[80px] lg:h-[96px] xl:h-[112px] 
                   px-4 md:px-6 lg:px-7 xl:px-9 hover:bg-gray-200 transition-colors duration-200 [&>svg]:w-4 [&>svg]:h-4 md:[&>svg]:w-5 md:[&>svg]:h-5">
                   <div className="flex items-center gap-3 md:gap-4 lg:gap-5 xl:gap-7">
@@ -74,7 +74,7 @@ export default function ComponentButtonsGrid() {
                       alt={item.title} 
                       className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 object-contain flex-shrink-0" 
                     />
-                    <span className="text-sm md:text-base lg:text-lg font-medium text-gray-800 text-left">
+                    <span className="text-sm md:text-[26px] font-medium text-left">
                       {item.title}
                     </span>
                   </div>
@@ -82,7 +82,7 @@ export default function ComponentButtonsGrid() {
                 
                 <AccordionContent className="bg-[#F6F6F6] h-[550px] md:h-[650px] lg:h-[700px]">
                   <div className="px-4 md:px-6 lg:px-7 xl:px-9 pt-4 md:pt-5 lg:pt-[22px] pb-4 md:pb-5 lg:pb-6 h-full flex flex-col">
-                    <p className={`text-sm md:text-base text-gray-600 leading-relaxed mb-4 md:mb-5  ${item.class}`}>
+                    <p className={`text-sm md:text-[16px]  leading-relaxed mb-4 md:mb-5  ${item.class}`}>
                       {item.description}
                     </p>
                     
